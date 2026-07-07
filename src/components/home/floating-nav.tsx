@@ -12,11 +12,11 @@ import type { MarketingUser } from "@/lib/auth/marketing";
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 const NAV = [
-  { href: "/#platform", label: "Platform" },
+  { href: "/", label: "Platform" },
   { href: "/agriculture", label: "Agriculture" },
   { href: "/developers", label: "For Developers" },
   { href: "/pricing", label: "Pricing" },
-  { href: "/#faq", label: "FAQ" },
+  { href: "/about", label: "About Us" },
 ];
 
 export function FloatingNav({ user = null }: { user?: MarketingUser | null }) {
@@ -130,10 +130,10 @@ export function FloatingNav({ user = null }: { user?: MarketingUser | null }) {
               Sign in
             </Link>
             <Link
-              href={isDevPage ? "/signup?role=developer" : "#start"}
+              href={isDevPage ? "/signup?role=developer" : "/signup"}
               className="rounded-full bg-navy-mid px-4 py-2 text-sm font-semibold text-white shadow-glow transition hover:bg-navy font-ui"
             >
-              {isDevPage ? "Sign up" : "Start a project"}
+              Sign up
             </Link>
           </div>
         )}
@@ -237,11 +237,11 @@ export function FloatingNav({ user = null }: { user?: MarketingUser | null }) {
                     Sign in
                   </Link>
                   <Link
-                    href={isDevPage ? "/signup?role=developer" : "#start"}
+                    href={isDevPage ? "/signup?role=developer" : "/signup"}
                     onClick={() => setOpen(false)}
                     className="rounded-full bg-navy-mid px-4 py-3 text-center text-sm font-semibold text-white font-ui"
                   >
-                    {isDevPage ? "Sign up" : "Start a project"}
+                    Sign up
                   </Link>
                 </>
               )}

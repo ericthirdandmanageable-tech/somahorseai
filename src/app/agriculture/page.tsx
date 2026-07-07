@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowUpRight,
@@ -94,24 +95,33 @@ export default async function AgriculturePage() {
     <>
       <FloatingNav user={user} />
       <main className="relative overflow-hidden bg-white text-emerald-950">
-        {/* ── Hero ── */}
-        <section className="agri-field relative">
-          <div className="agri-grid pointer-events-none absolute inset-0 opacity-60" />
-          <div className="pointer-events-none absolute -top-24 left-[-8%] size-[460px] rounded-full bg-emerald-400/20 blur-[150px]" />
-          <div className="pointer-events-none absolute right-[-6%] top-24 size-[420px] rounded-full bg-lime-400/20 blur-[150px]" />
+        {/* ── Hero — banner backdrop ── */}
+        <section className="relative overflow-hidden">
+          <Image
+            src="/agriculture-banner.jpg"
+            alt=""
+            fill
+            sizes="100vw"
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-emerald-950/80 via-emerald-950/65 to-emerald-950/85" aria-hidden />
+          <div className="absolute inset-0 bg-gradient-to-r from-emerald-950/70 via-transparent to-transparent" aria-hidden />
 
           <div className="relative mx-auto max-w-6xl px-6 pb-20 pt-32 sm:pt-36 lg:pb-28">
-            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-600/20 bg-white/70 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-emerald-700 backdrop-blur font-ui">
+            <span className="inline-flex items-center gap-2 rounded-full border border-lime-300/30 bg-emerald-950/40 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-lime-300 backdrop-blur font-ui">
               <Leaf className="size-3.5" aria-hidden />
               Somahorse.ai for Agriculture
             </span>
 
-            <h1 className="mt-6 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-emerald-950 sm:text-6xl">
+            <h1 className="mt-6 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl">
               Software that proves{" "}
-              <span className="text-agri-gradient">every harvest</span> — from
-              soil to shelf.
+              <span className="bg-gradient-to-r from-lime-300 via-emerald-300 to-lime-200 bg-clip-text text-transparent">
+                every harvest
+              </span>{" "}
+              — from soil to shelf.
             </h1>
-            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-emerald-900/70">
+            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-emerald-50/85">
               African agriculture runs on trust, timing, and traceability. We build the
               AI infrastructure that makes all three provable — so growers, packhouses,
               and exporters can move faster with confidence, even where connectivity is
@@ -121,14 +131,14 @@ export default async function AgriculturePage() {
             <div className="mt-9 flex flex-wrap items-center gap-3">
               <Link
                 href={primaryCta.href}
-                className="inline-flex min-h-12 items-center gap-2 rounded-full bg-emerald-600 px-7 text-sm font-bold text-white shadow-[0_18px_40px_-14px_rgba(5,150,105,0.7)] transition hover:bg-emerald-700 font-ui"
+                className="inline-flex min-h-12 items-center gap-2 rounded-full bg-emerald-500 px-7 text-sm font-bold text-white shadow-[0_18px_40px_-14px_rgba(16,185,129,0.8)] transition hover:bg-emerald-400 font-ui"
               >
                 {primaryCta.label}
                 <ArrowUpRight className="size-4" aria-hidden />
               </Link>
               <Link
                 href="#solutions"
-                className="inline-flex min-h-12 items-center gap-2 rounded-full border border-emerald-600/25 bg-white/70 px-7 text-sm font-bold text-emerald-800 backdrop-blur transition hover:bg-white font-ui"
+                className="inline-flex min-h-12 items-center gap-2 rounded-full border border-white/25 bg-white/10 px-7 text-sm font-bold text-white backdrop-blur transition hover:bg-white/20 font-ui"
               >
                 See what we build
               </Link>
@@ -136,11 +146,14 @@ export default async function AgriculturePage() {
 
             <dl className="mt-14 grid gap-4 sm:grid-cols-3">
               {STATS.map((s) => (
-                <div key={s.value} className="agri-glass rounded-2xl px-5 py-5">
-                  <dt className="font-display text-xl font-bold text-emerald-800">
+                <div
+                  key={s.value}
+                  className="rounded-2xl border border-white/15 bg-emerald-950/45 px-5 py-5 backdrop-blur-md"
+                >
+                  <dt className="font-display text-xl font-bold text-lime-300">
                     {s.value}
                   </dt>
-                  <dd className="mt-1 text-sm text-emerald-900/65">{s.label}</dd>
+                  <dd className="mt-1 text-sm text-emerald-50/75">{s.label}</dd>
                 </div>
               ))}
             </dl>

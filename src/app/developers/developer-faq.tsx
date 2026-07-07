@@ -45,7 +45,7 @@ export function DeveloperFAQ() {
         return (
           <div
             key={index}
-            className="overflow-hidden rounded-2xl border border-border bg-white transition hover:border-border-strong hover:shadow-soft"
+            className="dev-glass overflow-hidden rounded-2xl transition"
           >
             <button
               onClick={() => toggle(index)}
@@ -54,15 +54,15 @@ export function DeveloperFAQ() {
             >
               <span>{faq.question}</span>
               <ChevronDown
-                className={`size-5 text-navy-mid/60 transition-transform duration-300 ${
-                  isOpen ? "rotate-180 text-blue-vivid" : ""
+                className={`size-5 text-talent/60 transition-transform duration-300 ${
+                  isOpen ? "rotate-180 text-talent" : ""
                 }`}
               />
             </button>
             <div
               className={`transition-all duration-300 ease-in-out ${
-                isOpen ? "max-h-[300px] border-t border-border/60" : "max-h-0"
-              } overflow-hidden bg-blue-mist/10`}
+                isOpen ? "max-h-[300px] border-t border-border" : "max-h-0"
+              } overflow-hidden`}
             >
               <p className="px-6 py-5 text-sm leading-relaxed text-muted-foreground">
                 {faq.answer}
