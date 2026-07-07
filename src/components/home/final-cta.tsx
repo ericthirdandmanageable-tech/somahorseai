@@ -26,26 +26,27 @@ export function FinalCTA({ user = null }: { user?: MarketingUser | null }) {
   const { primary, secondary } = ctaPair(user);
   return (
     <section id="start" className="relative overflow-hidden px-5 pb-24 pt-8">
-      <Reveal className="relative mx-auto max-w-5xl overflow-hidden rounded-[34px] border border-border bg-white px-6 py-16 text-center shadow-card sm:px-12 sm:py-20">
-        <div className="pointer-events-none absolute left-1/2 top-0 size-[560px] -translate-x-1/2 -translate-y-1/3 rounded-full bg-blue-light/70 blur-[120px]" />
+      <Reveal className="cta-dark relative mx-auto max-w-5xl overflow-hidden rounded-[34px] border border-white/10 px-6 py-16 text-center shadow-card sm:px-12 sm:py-20">
+        <div className="cta-dark-grid pointer-events-none absolute inset-0 opacity-60" />
+        <div className="pointer-events-none absolute left-1/2 top-0 size-[560px] -translate-x-1/2 -translate-y-1/3 rounded-full bg-blue-vivid/25 blur-[120px]" />
         <div className="relative">
-          <p className="cue mb-4 text-navy-mid">Start with one agricultural problem</p>
-          <h2 className="h-section mx-auto max-w-3xl text-balance">
+          <p className="cue mb-4 text-sky-300">Start with one agricultural problem</p>
+          <h2 className="h-section mx-auto max-w-3xl text-balance text-white">
             Describe it once. Let the system scope, staff, build, and monitor it.
           </h2>
-          <p className="lead mx-auto mt-5 max-w-2xl">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-slate-400">
             The first project becomes the proof. The monitoring loop becomes the recurring engine.
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               href={primary.href}
-              className="flex min-h-12 items-center justify-center gap-1.5 rounded-full bg-navy-mid px-7 text-sm font-semibold text-white shadow-glow transition hover:bg-navy font-ui"
+              className="flex min-h-12 items-center justify-center gap-1.5 rounded-full bg-blue-vivid px-7 text-sm font-semibold text-white shadow-glow transition hover:bg-blue-sky font-ui"
             >
               {primary.label} <ArrowUpRight className="size-4" aria-hidden />
             </Link>
             <Link
               href={secondary.href}
-              className="flex min-h-12 items-center justify-center rounded-full border border-border-strong bg-white px-7 text-sm font-semibold text-navy transition hover:bg-blue-mist font-ui"
+              className="flex min-h-12 items-center justify-center rounded-full border border-white/20 bg-white/5 px-7 text-sm font-semibold text-slate-200 backdrop-blur-md transition hover:bg-white/10 font-ui"
             >
               {secondary.label}
             </Link>

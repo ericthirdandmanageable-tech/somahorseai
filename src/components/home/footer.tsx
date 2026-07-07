@@ -15,7 +15,7 @@ const COLUMNS = [
   {
     title: "Company",
     links: [
-      ["About", "#"],
+      ["About", "/about"],
       ["Agriculture", "/agriculture"],
       ["Careers", "#"],
       ["Contact", "#"],
@@ -25,7 +25,7 @@ const COLUMNS = [
     title: "Resources",
     links: [
       ["How it works", "#how-it-works"],
-      ["FAQ", "#faq"],
+      ["FAQ", "/#faq"],
       ["Changelog", "#"],
       ["Status", "#"],
     ],
@@ -45,7 +45,7 @@ export function Footer() {
   const year = new Date().getFullYear();
  
   return (
-    <footer id="faq" className="relative overflow-hidden border-t border-border bg-surface/60">
+    <footer className="relative overflow-hidden border-t border-border bg-surface/60">
       <div className="pointer-events-none absolute -bottom-24 left-1/2 size-[60vw] max-w-[760px] -translate-x-1/2 rounded-full bg-blue-light/60 blur-[120px]" />
  
       <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-16 md:grid-cols-[1.5fr_repeat(4,1fr)]">

@@ -42,28 +42,28 @@ const PIPELINE = [
     title: "Apply & Scoping",
     desc: "Create an account, specify your tech stack (Next.js, Python, PostgreSQL, APIs), and link your GitHub profile. Our team reviews profile applications within 48 hours.",
     icon: UserPlus,
-    badgeColor: "bg-blue-light text-navy-mid",
+    badgeColor: "bg-talent/20 text-indigo-300",
   },
   {
     step: "02",
     title: "Technical Sandbox",
     desc: "Complete a custom coding assignment simulating real agricultural logistics (e.g. offline-first inventory syncing, offline coordinate mapping, or supply-chain queues).",
     icon: ClipboardCheck,
-    badgeColor: "bg-accent-teal/15 text-accent-teal",
+    badgeColor: "bg-accent-teal/20 text-accent-teal",
   },
   {
     step: "03",
     title: "Live Review",
     desc: "A 45-minute live technical and architecture interview with a core Somahorse system builder to discuss your assessment, tech decisions, and workflow.",
     icon: MessageSquareCode,
-    badgeColor: "bg-accent-amber/15 text-accent-amber",
+    badgeColor: "bg-accent-amber/20 text-accent-amber",
   },
   {
     step: "04",
     title: "Certified Onboarding",
     desc: "Welcome to the developer network! Get matched with funded projects, deploy code with AI safety nets, and receive automated milestone payouts.",
     icon: PartyPopper,
-    badgeColor: "bg-blue-vivid/15 text-blue-vivid",
+    badgeColor: "bg-talent-bright/20 text-violet-300",
   },
 ] as const;
 
@@ -80,7 +80,8 @@ export default async function DevelopersPage() {
     <>
       <FloatingNav user={user} />
       
-      <main className="relative min-h-screen bg-background overflow-hidden">
+      <main className="dev-dark relative min-h-screen overflow-hidden">
+        <div className="dev-dark-grid pointer-events-none absolute inset-0 opacity-50" aria-hidden />
 
         {/* ═══════════════════════════════════════════════════════
             HERO SECTION — Split layout with robot
@@ -114,7 +115,7 @@ export default async function DevelopersPage() {
                   <br />
                   of African
                   <br />
-                  <span className="text-gradient">Agriculture</span>
+                  <span className="text-dev-gradient">Agriculture</span>
                 </h1>
 
                 {/* Sub copy */}
@@ -164,11 +165,11 @@ export default async function DevelopersPage() {
         {/* ═══════════════════════════════════════════════════════
             VALUE PROPS
         ═══════════════════════════════════════════════════════ */}
-        <section className="relative px-6 py-16 border-t border-border bg-white/40 backdrop-blur-md z-10">
+        <section className="relative px-6 py-16 border-t border-white/8 z-10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <span className="cue text-muted-foreground">The Developer Experience</span>
-              <h2 className="h-section text-navy font-display mt-2">Engineered for builders, backed by AI</h2>
+              <span className="cue text-indigo-300/80">The Developer Experience</span>
+              <h2 className="h-section text-white font-display mt-2">Engineered for builders, backed by AI</h2>
             </div>
             
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -177,13 +178,13 @@ export default async function DevelopersPage() {
                 return (
                   <div
                     key={idx}
-                    className="group relative rounded-3xl border border-border/80 bg-white/70 p-6 shadow-soft transition hover:border-border-strong hover:bg-white hover:shadow-card hover:-translate-y-1 duration-300"
+                    className="dev-glass group relative rounded-3xl p-6 transition hover:-translate-y-1 duration-300"
                   >
-                    <div className="inline-flex size-10 items-center justify-center rounded-2xl bg-blue-light text-navy-mid mb-5 group-hover:bg-blue-vivid group-hover:text-white transition-colors duration-300">
+                    <div className="inline-flex size-10 items-center justify-center rounded-2xl bg-talent/20 text-indigo-300 mb-5 group-hover:bg-talent group-hover:text-white transition-colors duration-300">
                       <Icon className="size-5" />
                     </div>
-                    <h3 className="font-ui text-base font-bold text-navy mb-2">{benefit.title}</h3>
-                    <p className="text-sm leading-relaxed text-muted-foreground">{benefit.desc}</p>
+                    <h3 className="font-ui text-base font-bold text-white mb-2">{benefit.title}</h3>
+                    <p className="text-sm leading-relaxed text-slate-400">{benefit.desc}</p>
                   </div>
                 );
               })}
@@ -194,39 +195,39 @@ export default async function DevelopersPage() {
         {/* ═══════════════════════════════════════════════════════
             PIPELINE STEPPER
         ═══════════════════════════════════════════════════════ */}
-        <section id="pipeline" className="relative px-6 py-20 sm:py-28 z-10 hero-field dotted-grid">
+        <section id="pipeline" className="relative px-6 py-20 sm:py-28 z-10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <span className="cue text-navy-mid">Onboarding Process</span>
-              <h2 className="h-section text-navy font-display mt-2">Your journey to joining Somahorse</h2>
-              <p className="lead max-w-xl mx-auto mt-4">
+              <span className="cue text-indigo-300/80">Onboarding Process</span>
+              <h2 className="h-section text-white font-display mt-2">Your journey to joining Somahorse</h2>
+              <p className="max-w-xl mx-auto mt-4 text-slate-400 leading-relaxed">
                 We maintain a vetted network of premium engineers. Here is the 4-step pipeline to get certified.
               </p>
             </div>
 
             <div className="relative grid gap-8 md:grid-cols-2 lg:grid-cols-4">
               {/* Stepper Connecting Lines (Desktop only) */}
-              <div className="hidden lg:block absolute top-12 left-8 right-8 h-0.5 bg-border -z-10" />
+              <div className="hidden lg:block absolute top-12 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-indigo-400/25 to-transparent -z-10" />
 
               {PIPELINE.map((step, idx) => {
                 const Icon = step.icon;
                 return (
-                  <div key={idx} className="relative flex flex-col items-start bg-white/80 border border-border/80 rounded-3xl p-6 sm:p-7 shadow-card">
+                  <div key={idx} className="dev-glass relative flex flex-col items-start rounded-3xl p-6 sm:p-7">
                     {/* Step badge & icon */}
                     <div className="flex w-full items-center justify-between mb-5">
-                      <div className={`flex size-12 items-center justify-center rounded-2xl ${step.badgeColor} shadow-soft`}>
+                      <div className={`flex size-12 items-center justify-center rounded-2xl ${step.badgeColor}`}>
                         <Icon className="size-6" />
                       </div>
-                      <span className="font-display text-3xl font-extrabold text-navy/10 leading-none select-none">
+                      <span className="font-display text-3xl font-extrabold text-white/10 leading-none select-none">
                         {step.step}
                       </span>
                     </div>
 
                     {/* Step Details */}
-                    <h3 className="font-ui text-lg font-bold text-navy mb-2.5">
+                    <h3 className="font-ui text-lg font-bold text-white mb-2.5">
                       {step.title}
                     </h3>
-                    <p className="text-sm leading-relaxed text-muted-foreground">
+                    <p className="text-sm leading-relaxed text-slate-400">
                       {step.desc}
                     </p>
                   </div>
@@ -239,11 +240,11 @@ export default async function DevelopersPage() {
         {/* ═══════════════════════════════════════════════════════
             FAQ
         ═══════════════════════════════════════════════════════ */}
-        <section id="dev-faq" className="relative px-6 py-20 bg-white/40 border-t border-border backdrop-blur-md z-10">
+        <section id="dev-faq" className="relative px-6 py-20 border-t border-white/8 z-10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-14">
-              <span className="cue text-muted-foreground">Common Inquiries</span>
-              <h2 className="h-section text-navy font-display mt-2">Frequently Asked Questions</h2>
+              <span className="cue text-indigo-300/80">Common Inquiries</span>
+              <h2 className="h-section text-white font-display mt-2">Frequently Asked Questions</h2>
             </div>
             <DeveloperFAQ />
           </div>
@@ -253,28 +254,28 @@ export default async function DevelopersPage() {
             FINAL CTA
         ═══════════════════════════════════════════════════════ */}
         <section className="relative px-6 py-24 z-10">
-          <div className="max-w-5xl mx-auto overflow-hidden rounded-[34px] border border-border bg-white px-6 py-16 text-center shadow-card sm:px-12 sm:py-20 relative">
+          <div className="dev-glass max-w-5xl mx-auto overflow-hidden rounded-[34px] px-6 py-16 text-center sm:px-12 sm:py-20 relative">
             {/* Ambient background blur */}
-            <div className="pointer-events-none absolute left-1/2 top-0 size-[560px] -translate-x-1/2 -translate-y-1/3 rounded-full bg-blue-light/70 blur-[120px]" />
+            <div className="pointer-events-none absolute left-1/2 top-0 size-[560px] -translate-x-1/2 -translate-y-1/3 rounded-full bg-talent-bright/20 blur-[120px]" />
             
             <div className="relative">
-              <span className="cue text-navy-mid">Take the first step</span>
-              <h2 className="h-section mx-auto max-w-3xl text-balance mt-3">
+              <span className="cue text-indigo-300/80">Take the first step</span>
+              <h2 className="h-section mx-auto max-w-3xl text-balance mt-3 text-white">
                 Ready to build resilient digital infrastructure?
               </h2>
-              <p className="lead mx-auto mt-5 max-w-2xl">
+              <p className="mx-auto mt-5 max-w-2xl text-slate-400 leading-relaxed">
                 Apply today, pass our logistics coding sandbox, and start earning by solving high-impact supply chain challenges.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row gap-3 items-center justify-center">
                 <Link
                   href={applyHref}
-                  className="w-full sm:w-auto min-h-12 flex items-center justify-center gap-1.5 rounded-full bg-navy-mid px-8 text-sm font-semibold text-white shadow-glow transition hover:bg-navy hover:scale-[1.02] font-ui"
+                  className="dev-hero-btn-primary w-full sm:w-auto"
                 >
                   {applyLabel ?? "Join Network"} <ArrowUpRight className="size-4" />
                 </Link>
                 <Link
                   href="/"
-                  className="w-full sm:w-auto min-h-12 flex items-center justify-center rounded-full border border-border-strong bg-white px-8 text-sm font-semibold text-navy transition hover:bg-blue-mist font-ui"
+                  className="dev-hero-btn-secondary w-full sm:w-auto"
                 >
                   Back to homepage
                 </Link>

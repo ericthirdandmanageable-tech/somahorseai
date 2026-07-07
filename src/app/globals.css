@@ -32,6 +32,14 @@
   --accent-amber: 36 96% 52%;
  
   --ring: 213 98% 27%;
+
+  /* Role signature themes */
+  --client-accent: 160 84% 30%;       /* deep emerald — clients */
+  --client-accent-bright: 158 64% 42%;
+  --client-tint: 152 76% 96%;
+  --talent-accent: 224 82% 56%;       /* electric indigo-blue — talent */
+  --talent-accent-bright: 248 90% 66%;
+  --talent-tint: 226 100% 96%;
 }
  
 @theme inline {
@@ -54,6 +62,13 @@
  
   --color-accent-teal: hsl(var(--accent-teal));
   --color-accent-amber: hsl(var(--accent-amber));
+ 
+  --color-client: hsl(var(--client-accent));
+  --color-client-bright: hsl(var(--client-accent-bright));
+  --color-client-tint: hsl(var(--client-tint));
+  --color-talent: hsl(var(--talent-accent));
+  --color-talent-bright: hsl(var(--talent-accent-bright));
+  --color-talent-tint: hsl(var(--talent-tint));
  
   --color-ring: hsl(var(--ring));
  
@@ -209,18 +224,46 @@ button:focus-visible {
   background: linear-gradient(90deg, transparent, hsl(var(--navy-mid) / 0.25), transparent);
 }
  
-/* ─── Developer Hero Section ─── */
+/* ─── Developer Section — dark futuristic theme ─── */
+.dev-dark {
+  background:
+    radial-gradient(60% 45% at 15% 0%, hsl(248 60% 22% / 0.55), transparent 65%),
+    radial-gradient(50% 40% at 90% 15%, hsl(224 70% 24% / 0.5), transparent 65%),
+    linear-gradient(180deg, hsl(240 32% 8%), hsl(236 30% 6%));
+  color: hsl(220 30% 92%);
+}
+.dev-dark-grid {
+  background-image:
+    linear-gradient(hsl(230 60% 70% / 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(230 60% 70% / 0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+.dev-glass {
+  background: linear-gradient(150deg, hsl(235 35% 14% / 0.85), hsl(238 32% 10% / 0.85));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid hsl(230 70% 70% / 0.14);
+  box-shadow: 0 24px 60px -30px hsl(240 60% 4% / 0.9), inset 0 1px 0 hsl(230 80% 85% / 0.08);
+}
+.dev-glass:hover {
+  border-color: hsl(240 90% 72% / 0.35);
+}
+.text-dev-gradient {
+  background: linear-gradient(100deg, hsl(224 90% 70%) 0%, hsl(248 92% 74%) 55%, hsl(190 90% 62%) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 .dev-hero-section {
   position: relative;
-  background: linear-gradient(168deg, hsl(210 30% 96%) 0%, hsl(210 20% 93%) 40%, hsl(215 25% 90%) 100%);
   overflow: hidden;
 }
 .dev-hero-bg {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(55% 50% at 10% 20%, hsl(var(--blue-sky) / 0.12), transparent 65%),
-    radial-gradient(45% 45% at 80% 70%, hsl(var(--navy-mid) / 0.08), transparent 60%);
+    radial-gradient(55% 50% at 12% 18%, hsl(248 85% 60% / 0.14), transparent 65%),
+    radial-gradient(45% 45% at 82% 65%, hsl(190 90% 55% / 0.08), transparent 60%);
   pointer-events: none;
 }
 
@@ -230,18 +273,18 @@ button:focus-visible {
   align-items: center;
   gap: 0;
   border-radius: 999px;
-  background: hsl(var(--navy-mid) / 0.08);
-  border: 1px solid hsl(var(--navy-mid) / 0.12);
+  background: hsl(230 60% 60% / 0.1);
+  border: 1px solid hsl(230 70% 70% / 0.18);
   padding: 0.3rem 0.4rem 0.3rem 0.5rem;
   transition: all 0.3s ease;
   text-decoration: none;
   backdrop-filter: blur(8px);
 }
 .dev-hero-pill:hover {
-  background: hsl(var(--navy-mid) / 0.14);
-  border-color: hsl(var(--navy-mid) / 0.2);
+  background: hsl(230 60% 60% / 0.18);
+  border-color: hsl(240 90% 72% / 0.4);
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px -8px hsl(var(--navy-mid) / 0.2);
+  box-shadow: 0 6px 24px -8px hsl(248 90% 66% / 0.4);
 }
 .dev-hero-pill-badge {
   display: inline-flex;
@@ -250,18 +293,19 @@ button:focus-visible {
   font-family: var(--font-tenor-sans), sans-serif;
   font-size: 0.72rem;
   font-weight: 600;
-  color: hsl(var(--navy-mid));
+  color: hsl(226 100% 88%);
   padding: 0.3rem 0.75rem;
   border-radius: 999px;
-  background: hsl(var(--blue-light));
-  border: 1px solid hsl(var(--blue-vivid) / 0.15);
+  background: hsl(240 45% 20% / 0.8);
+  border: 1px solid hsl(248 90% 66% / 0.3);
 }
 .dev-hero-pill-dot {
   display: inline-block;
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: hsl(var(--accent-teal));
+  background: hsl(160 84% 52%);
+  box-shadow: 0 0 10px hsl(160 84% 52% / 0.9);
   animation: glow-pulse 3s ease-in-out infinite;
 }
 .dev-hero-pill-cta {
@@ -271,10 +315,9 @@ button:focus-visible {
   font-family: var(--font-tenor-sans), sans-serif;
   font-size: 0.72rem;
   font-weight: 700;
-  color: hsl(var(--foreground));
   padding: 0.3rem 0.85rem;
   border-radius: 999px;
-  background: hsl(var(--navy));
+  background: linear-gradient(120deg, hsl(224 82% 56%), hsl(248 90% 66%));
   color: white;
   margin-left: 0.25rem;
 }
@@ -285,14 +328,14 @@ button:focus-visible {
   font-weight: 700;
   letter-spacing: -0.035em;
   line-height: 1.04;
-  color: hsl(var(--navy));
+  color: hsl(220 40% 96%);
   font-size: clamp(2.4rem, 5.5vw, 4.2rem);
 }
 
 /* ── Sub text ── */
 .dev-hero-subtext {
   font-family: var(--font-tenor-sans), sans-serif;
-  color: hsl(var(--muted-foreground));
+  color: hsl(225 25% 72%);
   font-size: clamp(0.92rem, 1.3vw, 1.08rem);
   line-height: 1.72;
 }
@@ -306,7 +349,7 @@ button:focus-visible {
   min-height: 3rem;
   padding: 0 2rem;
   border-radius: 999px;
-  background: hsl(var(--navy));
+  background: linear-gradient(120deg, hsl(224 82% 56%), hsl(248 90% 66%));
   color: white;
   font-family: var(--font-tenor-sans), sans-serif;
   font-size: 0.875rem;
@@ -315,12 +358,12 @@ button:focus-visible {
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 10px 30px -10px hsl(var(--navy) / 0.5);
+  box-shadow: 0 10px 34px -10px hsl(248 90% 66% / 0.6);
 }
 .dev-hero-btn-primary:hover {
-  background: hsl(var(--navy-mid));
+  filter: brightness(1.12);
   transform: translateY(-2px);
-  box-shadow: 0 14px 40px -12px hsl(var(--navy) / 0.55);
+  box-shadow: 0 14px 44px -12px hsl(248 90% 66% / 0.7);
 }
 .dev-hero-btn-secondary {
   display: inline-flex;
@@ -329,18 +372,20 @@ button:focus-visible {
   min-height: 3rem;
   padding: 0 2rem;
   border-radius: 999px;
-  background: hsl(var(--navy-mid));
-  color: white;
+  background: hsl(235 30% 16% / 0.7);
+  color: hsl(224 60% 88%);
   font-family: var(--font-tenor-sans), sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
   text-decoration: none;
-  border: none;
+  border: 1px solid hsl(230 70% 70% / 0.2);
   cursor: pointer;
   transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
 }
 .dev-hero-btn-secondary:hover {
-  background: hsl(var(--navy));
+  border-color: hsl(248 90% 66% / 0.5);
+  background: hsl(235 30% 20% / 0.8);
   transform: translateY(-1px);
 }
 
@@ -352,7 +397,7 @@ button:focus-visible {
   width: 400px;
   height: 400px;
   border-radius: 50%;
-  background: radial-gradient(circle, hsl(var(--blue-sky) / 0.2) 0%, transparent 70%);
+  background: radial-gradient(circle, hsl(248 90% 66% / 0.3) 0%, hsl(190 90% 55% / 0.12) 45%, transparent 70%);
   filter: blur(60px);
   pointer-events: none;
 }
@@ -364,7 +409,7 @@ button:focus-visible {
   height: auto;
   object-fit: contain;
   object-position: bottom;
-  filter: drop-shadow(0 30px 60px hsl(var(--navy) / 0.18));
+  filter: drop-shadow(0 0 42px hsl(248 90% 66% / 0.35)) drop-shadow(0 30px 60px hsl(240 60% 4% / 0.7));
   animation: float 7s ease-in-out infinite;
 }
 
@@ -373,8 +418,8 @@ button:focus-visible {
   position: relative;
   z-index: 10;
   padding: 2rem 0 2.5rem;
-  border-top: 1px solid hsl(var(--border));
-  background: hsl(0 0% 100% / 0.5);
+  border-top: 1px solid hsl(230 70% 70% / 0.12);
+  background: hsl(238 32% 8% / 0.7);
   backdrop-filter: blur(12px);
 }
 .dev-hero-stat-item {
@@ -388,14 +433,17 @@ button:focus-visible {
   font-weight: 700;
   font-size: clamp(1.6rem, 3vw, 2.2rem);
   letter-spacing: -0.03em;
-  color: hsl(var(--navy));
+  background: linear-gradient(120deg, hsl(224 90% 72%), hsl(248 92% 76%));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   line-height: 1.1;
 }
 .dev-hero-stat-label {
   font-family: var(--font-tenor-sans), sans-serif;
   font-size: 0.78rem;
   font-weight: 500;
-  color: hsl(var(--muted-foreground));
+  color: hsl(225 25% 68%);
   letter-spacing: 0.01em;
 }
 
@@ -445,6 +493,119 @@ button:focus-visible {
   .dev-hero-btn-secondary {
     width: 100%;
   }
+}
+
+/* ─── Role signature fields (client = emerald, talent = indigo) ─── */
+.client-field {
+  background:
+    radial-gradient(55% 45% at 50% 4%, hsl(158 64% 42% / 0.16), transparent 70%),
+    radial-gradient(45% 40% at 84% 18%, hsl(160 84% 30% / 0.14), transparent 70%),
+    radial-gradient(50% 45% at 12% 76%, hsl(84 70% 45% / 0.12), transparent 72%),
+    linear-gradient(180deg, hsl(152 76% 97%), hsl(0 0% 100%) 72%);
+}
+.client-grid {
+  background-image: radial-gradient(hsl(160 84% 30% / 0.12) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+.talent-field {
+  background:
+    radial-gradient(55% 45% at 50% 4%, hsl(248 90% 66% / 0.14), transparent 70%),
+    radial-gradient(45% 40% at 84% 18%, hsl(224 82% 56% / 0.14), transparent 70%),
+    radial-gradient(50% 45% at 12% 76%, hsl(190 90% 55% / 0.10), transparent 72%),
+    linear-gradient(180deg, hsl(226 100% 97%), hsl(0 0% 100%) 72%);
+}
+.talent-grid {
+  background-image: radial-gradient(hsl(224 82% 56% / 0.12) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+.text-client-gradient {
+  background: linear-gradient(100deg, hsl(163 94% 15%) 0%, hsl(160 84% 32%) 48%, hsl(84 70% 40%) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.text-talent-gradient {
+  background: linear-gradient(100deg, hsl(239 96% 22%) 0%, hsl(224 82% 56%) 48%, hsl(248 90% 66%) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ─── Auth split layout side panels ─── */
+.auth-panel-client {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, hsl(163 94% 12%), hsl(160 84% 20%) 55%, hsl(150 60% 26%));
+}
+.auth-panel-talent {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(60% 50% at 30% 10%, hsl(248 60% 26% / 0.9), transparent 70%),
+    radial-gradient(50% 45% at 85% 80%, hsl(224 70% 26% / 0.8), transparent 70%),
+    linear-gradient(180deg, hsl(240 32% 10%), hsl(236 30% 7%));
+}
+
+/* ─── Liquid glass (light) ─── */
+.glass-card {
+  background: linear-gradient(150deg, rgb(255 255 255 / 0.8), rgb(240 246 255 / 0.55));
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid hsl(var(--navy-mid) / 0.12);
+  box-shadow: 0 20px 55px -30px hsl(var(--navy) / 0.35), inset 0 1px 0 rgb(255 255 255 / 0.65);
+}
+
+/* ─── About page — futuristic liquid glass ─── */
+.about-dark {
+  background:
+    radial-gradient(60% 45% at 20% 0%, hsl(213 80% 22% / 0.6), transparent 65%),
+    radial-gradient(50% 40% at 85% 20%, hsl(239 70% 24% / 0.55), transparent 65%),
+    linear-gradient(180deg, hsl(233 55% 9%), hsl(235 50% 6%));
+  color: hsl(215 40% 94%);
+}
+.about-glass {
+  background: linear-gradient(150deg, hsl(220 45% 16% / 0.75), hsl(228 45% 11% / 0.75));
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid hsl(210 90% 70% / 0.14);
+  box-shadow: 0 24px 60px -32px hsl(235 70% 3% / 0.9), inset 0 1px 0 hsl(210 90% 85% / 0.08);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.about-glass:hover {
+  border-color: hsl(205 92% 60% / 0.4);
+}
+.about-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  animation: float 9s ease-in-out infinite;
+}
+
+/* ─── Futuristic FAQ / homepage bottom ─── */
+.faq-glass {
+  background: linear-gradient(150deg, rgb(255 255 255 / 0.82), rgb(238 245 255 / 0.6));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid hsl(var(--navy-mid) / 0.12);
+  box-shadow: 0 16px 44px -28px hsl(var(--navy) / 0.35), inset 0 1px 0 rgb(255 255 255 / 0.7);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.faq-glass:hover {
+  border-color: hsl(var(--blue-vivid) / 0.35);
+  box-shadow: 0 20px 55px -26px hsl(var(--navy-mid) / 0.45), inset 0 1px 0 rgb(255 255 255 / 0.7);
+}
+.cta-dark {
+  background:
+    radial-gradient(60% 55% at 50% 0%, hsl(213 98% 27% / 0.55), transparent 70%),
+    radial-gradient(45% 40% at 85% 85%, hsl(218 92% 56% / 0.25), transparent 65%),
+    linear-gradient(180deg, hsl(233 60% 10%), hsl(239 70% 8%));
+}
+.cta-dark-grid {
+  background-image:
+    linear-gradient(hsl(213 90% 70% / 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(213 90% 70% / 0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
 /* ─── Keyframes ─── */
