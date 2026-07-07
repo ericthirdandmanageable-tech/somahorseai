@@ -9,10 +9,10 @@ const ROLES = [
     title: "Client",
     body: "Describe your agricultural problem in plain language. Our AI scopes it, prices it, and a certified team builds it.",
     icon: Building2,
-    iconWrap: "bg-client-tint text-client",
-    ring: "hover:border-client/40 hover:shadow-[0_24px_60px_-30px_hsl(160_84%_30%/0.45)]",
-    cta: "text-client",
-    bar: "from-client to-client-bright",
+    header: "bg-gradient-to-br from-client to-client-bright",
+    ring: "border-client/30 hover:border-client hover:shadow-[0_24px_60px_-30px_hsl(160_84%_30%/0.55)]",
+    cta: "bg-client hover:bg-emerald-900",
+    chip: "bg-client-tint text-client",
   },
   {
     href: "/signup?role=developer",
@@ -20,10 +20,10 @@ const ROLES = [
     title: "Developer",
     body: "Join a vetted network of African engineers. Get matched with funded projects and earn milestone-based payouts.",
     icon: Code2,
-    iconWrap: "bg-talent-tint text-talent",
-    ring: "hover:border-talent/40 hover:shadow-[0_24px_60px_-30px_hsl(224_82%_56%/0.45)]",
-    cta: "text-talent",
-    bar: "from-talent to-talent-bright",
+    header: "bg-gradient-to-br from-talent to-talent-bright",
+    ring: "border-talent/30 hover:border-talent hover:shadow-[0_24px_60px_-30px_hsl(224_82%_56%/0.55)]",
+    cta: "bg-talent hover:bg-navy",
+    chip: "bg-talent-tint text-talent",
   },
 ] as const;
 
@@ -72,22 +72,25 @@ export function RoleSelect() {
               <Link
                 key={role.title}
                 href={role.href}
-                className={`group relative flex flex-col overflow-hidden rounded-3xl border border-border/80 bg-white/80 p-6 shadow-card backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 sm:p-7 ${role.ring}`}
+                className={`group relative flex flex-col overflow-hidden rounded-2xl border-2 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 ${role.ring}`}
               >
-                <span className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r opacity-0 transition-opacity duration-300 group-hover:opacity-100 ${role.bar}`} />
-                <span className={`mb-6 grid size-11 place-items-center rounded-full ${role.iconWrap}`}>
-                  <Icon className="size-5" aria-hidden />
+                <span className={`flex items-center justify-between px-6 py-5 text-white ${role.header}`}>
+                  <span className="grid size-11 place-items-center rounded-xl bg-white/15 backdrop-blur-sm">
+                    <Icon className="size-5" aria-hidden />
+                  </span>
+                  <span className="text-right">
+                    <span className="block text-[11px] font-semibold uppercase tracking-widest text-white/75 font-ui">{role.eyebrow}</span>
+                    <span className="block font-display text-2xl font-bold leading-tight">{role.title}</span>
+                  </span>
                 </span>
-                <span className="cue text-muted-foreground/70">{role.eyebrow}</span>
-                <span className="mt-1 font-display text-2xl font-bold text-navy">
-                  {role.title}
-                </span>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
-                  {role.body}
-                </p>
-                <span className={`mt-6 inline-flex items-center gap-1.5 text-sm font-bold font-ui ${role.cta}`}>
-                  Continue
-                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden />
+                <span className="flex flex-1 flex-col p-6">
+                  <p className="flex-1 text-sm leading-relaxed text-muted-foreground">
+                    {role.body}
+                  </p>
+                  <span className={`mt-6 inline-flex min-h-10 items-center justify-center gap-1.5 rounded-full px-5 text-sm font-bold text-white transition font-ui ${role.cta}`}>
+                    Continue
+                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden />
+                  </span>
                 </span>
               </Link>
             );

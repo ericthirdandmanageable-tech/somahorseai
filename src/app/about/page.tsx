@@ -115,23 +115,23 @@ export default async function AboutPage() {
 
       <main className="about-dark relative min-h-screen overflow-hidden">
         {/* Ambient orbs */}
-        <div className="about-orb -top-32 left-[10%] size-[420px] bg-blue-vivid/20" aria-hidden />
-        <div className="about-orb top-[40%] right-[-8%] size-[380px] bg-violet-500/15" aria-hidden />
-        <div className="about-orb bottom-[-10%] left-[30%] size-[420px] bg-blue-sky/10" aria-hidden />
+        <div className="about-orb -top-32 left-[10%] size-[420px] bg-blue-vivid/10" aria-hidden />
+        <div className="about-orb top-[40%] right-[-8%] size-[380px] bg-violet-500/8" aria-hidden />
+        <div className="about-orb bottom-[-10%] left-[30%] size-[420px] bg-blue-sky/8" aria-hidden />
         <div className="cta-dark-grid pointer-events-none absolute inset-0 opacity-40" aria-hidden />
 
         {/* ── Hero ── */}
         <section className="relative z-10 px-6 pt-32 pb-16 sm:pt-40 sm:pb-24 text-center">
           <div className="mx-auto max-w-4xl">
-            <span className="inline-flex items-center gap-2 rounded-full border border-blue-sky/25 bg-blue-sky/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-sky-300 backdrop-blur-md font-ui">
+            <span className="inline-flex items-center gap-2 rounded-full border border-navy-mid/15 bg-blue-light px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-navy-mid backdrop-blur-md font-ui">
               <Sparkles className="size-3.5" aria-hidden />
               About Somahorse.ai
             </span>
-            <h1 className="mt-6 font-display text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+            <h1 className="mt-6 font-display text-4xl font-bold leading-tight tracking-tight text-navy sm:text-5xl lg:text-6xl">
               The AI-run software agency for{" "}
               <span className="text-gradient">African agriculture</span>
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-400 sm:text-lg">
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
               Clients describe a problem in plain language. Our AI scopes it, prices it,
               funds it in escrow, and matches it to certified African engineers — then
               keeps the shipped software alive with continuous monitoring.
@@ -139,13 +139,13 @@ export default async function AboutPage() {
             <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link
                 href="/signup"
-                className="inline-flex min-h-12 items-center justify-center gap-1.5 rounded-full bg-blue-vivid px-8 text-sm font-semibold text-white shadow-glow transition hover:bg-navy-mid font-ui"
+                className="inline-flex min-h-12 items-center justify-center gap-1.5 rounded-full bg-navy-mid px-8 text-sm font-semibold text-white shadow-glow transition hover:bg-navy font-ui"
               >
                 Join the platform <ArrowRight className="size-4" aria-hidden />
               </Link>
               <Link
-                href="/#platform"
-                className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/15 bg-white/5 px-8 text-sm font-semibold text-slate-200 backdrop-blur-md transition hover:bg-white/10 font-ui"
+                href="/"
+                className="inline-flex min-h-12 items-center justify-center rounded-full border border-border bg-white/70 px-8 text-sm font-semibold text-navy backdrop-blur-md transition hover:bg-blue-mist font-ui"
               >
                 Explore the platform
               </Link>
@@ -159,7 +159,7 @@ export default async function AboutPage() {
             {STATS.map((stat) => (
               <div key={stat.label} className="text-center">
                 <p className="font-display text-3xl font-bold text-gradient">{stat.value}</p>
-                <p className="mt-1 text-xs font-medium text-slate-400 font-ui">{stat.label}</p>
+                <p className="mt-1 text-xs font-medium text-muted-foreground font-ui">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -169,11 +169,11 @@ export default async function AboutPage() {
         <section className="relative z-10 px-6 py-16 sm:py-20">
           <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-2">
             <div className="about-glass rounded-3xl p-8 sm:p-10">
-              <span className="inline-flex size-11 items-center justify-center rounded-2xl bg-blue-vivid/15 text-sky-300">
+              <span className="inline-flex size-11 items-center justify-center rounded-2xl bg-blue-vivid/10 text-blue-vivid">
                 <Compass className="size-5" aria-hidden />
               </span>
-              <h2 className="mt-5 font-display text-2xl font-bold text-white sm:text-3xl">Our mission</h2>
-              <p className="mt-4 text-sm leading-relaxed text-slate-400 sm:text-base">
+              <h2 className="mt-5 font-display text-2xl font-bold text-navy sm:text-3xl">Our mission</h2>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
                 Critical food logistics across Africa still run on paper, phone calls, and
                 spreadsheets. We exist to close that gap — making world-class custom software
                 accessible to agricultural enterprises of every size, without the ambiguity,
@@ -181,11 +181,11 @@ export default async function AboutPage() {
               </p>
             </div>
             <div className="about-glass rounded-3xl p-8 sm:p-10">
-              <span className="inline-flex size-11 items-center justify-center rounded-2xl bg-violet-500/15 text-violet-300">
+              <span className="inline-flex size-11 items-center justify-center rounded-2xl bg-violet-500/10 text-violet-600">
                 <Cpu className="size-5" aria-hidden />
               </span>
-              <h2 className="mt-5 font-display text-2xl font-bold text-white sm:text-3xl">How we work</h2>
-              <p className="mt-4 text-sm leading-relaxed text-slate-400 sm:text-base">
+              <h2 className="mt-5 font-display text-2xl font-bold text-navy sm:text-3xl">How we work</h2>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
                 An AI engine sits at the center of everything: it interviews the client,
                 writes the scope, prices the milestones, matches the right certified
                 engineers, watches the code ship, and then monitors production around the
@@ -199,8 +199,8 @@ export default async function AboutPage() {
         <section className="relative z-10 px-6 py-16 sm:py-20">
           <div className="mx-auto max-w-6xl">
             <div className="mb-12 text-center">
-              <span className="cue text-sky-300/80">What we believe</span>
-              <h2 className="h-section mt-2 font-display text-white">Principles that run the platform</h2>
+              <span className="cue text-navy-mid">What we believe</span>
+              <h2 className="h-section mt-2 font-display">Principles that run the platform</h2>
             </div>
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {VALUES.map((value) => {
@@ -210,11 +210,11 @@ export default async function AboutPage() {
                     key={value.title}
                     className="about-glass group rounded-3xl p-7 transition duration-300 hover:-translate-y-1"
                   >
-                    <span className="inline-flex size-10 items-center justify-center rounded-2xl bg-blue-vivid/15 text-sky-300 transition-colors duration-300 group-hover:bg-blue-vivid group-hover:text-white">
+                    <span className="inline-flex size-10 items-center justify-center rounded-2xl bg-blue-vivid/10 text-blue-vivid transition-colors duration-300 group-hover:bg-blue-vivid group-hover:text-white">
                       <Icon className="size-5" aria-hidden />
                     </span>
-                    <h3 className="mt-4 font-ui text-base font-bold text-white">{value.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-slate-400">{value.desc}</p>
+                    <h3 className="mt-4 font-ui text-base font-bold text-navy">{value.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{value.desc}</p>
                   </div>
                 );
               })}
@@ -226,9 +226,9 @@ export default async function AboutPage() {
         <section className="relative z-10 px-6 py-16 sm:py-24">
           <div className="mx-auto max-w-6xl">
             <div className="mb-12 text-center">
-              <span className="cue text-sky-300/80">The people</span>
-              <h2 className="h-section mt-2 font-display text-white">Meet the team of six</h2>
-              <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-slate-400 sm:text-base">
+              <span className="cue text-navy-mid">The people</span>
+              <h2 className="h-section mt-2 font-display">Meet the team of six</h2>
+              <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
                 A small crew with one obsession: keeping Africa&apos;s food supply chains
                 running on software that never sleeps.
               </p>
@@ -245,11 +245,11 @@ export default async function AboutPage() {
                   >
                     {member.initials}
                   </span>
-                  <h3 className="mt-5 font-display text-lg font-bold text-white">{member.name}</h3>
-                  <p className="mt-1 text-xs font-semibold uppercase tracking-widest text-sky-300/80 font-ui">
+                  <h3 className="mt-5 font-display text-lg font-bold text-navy">{member.name}</h3>
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-widest text-blue-vivid font-ui">
                     {member.role}
                   </p>
-                  <p className="mt-3 text-sm leading-relaxed text-slate-400">{member.bio}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{member.bio}</p>
                 </div>
               ))}
             </div>
@@ -259,10 +259,10 @@ export default async function AboutPage() {
         {/* ── CTA ── */}
         <section className="relative z-10 px-6 pb-24">
           <div className="about-glass mx-auto max-w-4xl rounded-[34px] p-10 text-center sm:p-14">
-            <h2 className="font-display text-2xl font-bold text-white sm:text-3xl">
+            <h2 className="font-display text-2xl font-bold text-navy sm:text-3xl">
               Want to build with us?
             </h2>
-            <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-slate-400 sm:text-base">
+            <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
               Whether you&apos;re an agricultural enterprise with a problem to solve or an
               engineer ready to join the network — there&apos;s a seat for you.
             </p>

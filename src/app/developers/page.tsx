@@ -42,28 +42,28 @@ const PIPELINE = [
     title: "Apply & Scoping",
     desc: "Create an account, specify your tech stack (Next.js, Python, PostgreSQL, APIs), and link your GitHub profile. Our team reviews profile applications within 48 hours.",
     icon: UserPlus,
-    badgeColor: "bg-talent/20 text-indigo-300",
+    badgeColor: "bg-talent/10 text-talent",
   },
   {
     step: "02",
     title: "Technical Sandbox",
     desc: "Complete a custom coding assignment simulating real agricultural logistics (e.g. offline-first inventory syncing, offline coordinate mapping, or supply-chain queues).",
     icon: ClipboardCheck,
-    badgeColor: "bg-accent-teal/20 text-accent-teal",
+    badgeColor: "bg-accent-teal/15 text-accent-teal",
   },
   {
     step: "03",
     title: "Live Review",
     desc: "A 45-minute live technical and architecture interview with a core Somahorse system builder to discuss your assessment, tech decisions, and workflow.",
     icon: MessageSquareCode,
-    badgeColor: "bg-accent-amber/20 text-accent-amber",
+    badgeColor: "bg-accent-amber/15 text-accent-amber",
   },
   {
     step: "04",
     title: "Certified Onboarding",
     desc: "Welcome to the developer network! Get matched with funded projects, deploy code with AI safety nets, and receive automated milestone payouts.",
     icon: PartyPopper,
-    badgeColor: "bg-talent-bright/20 text-violet-300",
+    badgeColor: "bg-talent-bright/15 text-talent-bright",
   },
 ] as const;
 
@@ -147,7 +147,7 @@ export default async function DevelopersPage() {
                 {/* Glow behind the robot */}
                 <div className="dev-hero-robot-glow" />
                 <Image
-                  src="/developer-robot.png"
+                  src="/developer-real-robot.png"
                   alt="Futuristic AI robot representing Somahorse developer network"
                   width={620}
                   height={700}
@@ -165,11 +165,11 @@ export default async function DevelopersPage() {
         {/* ═══════════════════════════════════════════════════════
             VALUE PROPS
         ═══════════════════════════════════════════════════════ */}
-        <section className="relative px-6 py-16 border-t border-white/8 z-10">
+        <section className="relative px-6 py-16 border-t border-border z-10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <span className="cue text-indigo-300/80">The Developer Experience</span>
-              <h2 className="h-section text-white font-display mt-2">Engineered for builders, backed by AI</h2>
+              <span className="cue text-talent">The Developer Experience</span>
+              <h2 className="h-section font-display mt-2">Engineered for builders, backed by AI</h2>
             </div>
             
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -180,11 +180,11 @@ export default async function DevelopersPage() {
                     key={idx}
                     className="dev-glass group relative rounded-3xl p-6 transition hover:-translate-y-1 duration-300"
                   >
-                    <div className="inline-flex size-10 items-center justify-center rounded-2xl bg-talent/20 text-indigo-300 mb-5 group-hover:bg-talent group-hover:text-white transition-colors duration-300">
+                    <div className="inline-flex size-10 items-center justify-center rounded-2xl bg-talent/10 text-talent mb-5 group-hover:bg-talent group-hover:text-white transition-colors duration-300">
                       <Icon className="size-5" />
                     </div>
-                    <h3 className="font-ui text-base font-bold text-white mb-2">{benefit.title}</h3>
-                    <p className="text-sm leading-relaxed text-slate-400">{benefit.desc}</p>
+                    <h3 className="font-ui text-base font-bold text-navy mb-2">{benefit.title}</h3>
+                    <p className="text-sm leading-relaxed text-muted-foreground">{benefit.desc}</p>
                   </div>
                 );
               })}
@@ -198,16 +198,16 @@ export default async function DevelopersPage() {
         <section id="pipeline" className="relative px-6 py-20 sm:py-28 z-10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <span className="cue text-indigo-300/80">Onboarding Process</span>
-              <h2 className="h-section text-white font-display mt-2">Your journey to joining Somahorse</h2>
-              <p className="max-w-xl mx-auto mt-4 text-slate-400 leading-relaxed">
+              <span className="cue text-talent">Onboarding Process</span>
+              <h2 className="h-section font-display mt-2">Your journey to joining Somahorse</h2>
+              <p className="max-w-xl mx-auto mt-4 text-muted-foreground leading-relaxed">
                 We maintain a vetted network of premium engineers. Here is the 4-step pipeline to get certified.
               </p>
             </div>
 
             <div className="relative grid gap-8 md:grid-cols-2 lg:grid-cols-4">
               {/* Stepper Connecting Lines (Desktop only) */}
-              <div className="hidden lg:block absolute top-12 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-indigo-400/25 to-transparent -z-10" />
+              <div className="hidden lg:block absolute top-12 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-talent/25 to-transparent -z-10" />
 
               {PIPELINE.map((step, idx) => {
                 const Icon = step.icon;
@@ -218,16 +218,16 @@ export default async function DevelopersPage() {
                       <div className={`flex size-12 items-center justify-center rounded-2xl ${step.badgeColor}`}>
                         <Icon className="size-6" />
                       </div>
-                      <span className="font-display text-3xl font-extrabold text-white/10 leading-none select-none">
+                      <span className="font-display text-3xl font-extrabold text-navy/10 leading-none select-none">
                         {step.step}
                       </span>
                     </div>
 
                     {/* Step Details */}
-                    <h3 className="font-ui text-lg font-bold text-white mb-2.5">
+                    <h3 className="font-ui text-lg font-bold text-navy mb-2.5">
                       {step.title}
                     </h3>
-                    <p className="text-sm leading-relaxed text-slate-400">
+                    <p className="text-sm leading-relaxed text-muted-foreground">
                       {step.desc}
                     </p>
                   </div>
@@ -240,11 +240,11 @@ export default async function DevelopersPage() {
         {/* ═══════════════════════════════════════════════════════
             FAQ
         ═══════════════════════════════════════════════════════ */}
-        <section id="dev-faq" className="relative px-6 py-20 border-t border-white/8 z-10">
+        <section id="dev-faq" className="relative px-6 py-20 border-t border-border z-10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-14">
-              <span className="cue text-indigo-300/80">Common Inquiries</span>
-              <h2 className="h-section text-white font-display mt-2">Frequently Asked Questions</h2>
+              <span className="cue text-talent">Common Inquiries</span>
+              <h2 className="h-section font-display mt-2">Frequently Asked Questions</h2>
             </div>
             <DeveloperFAQ />
           </div>
@@ -256,14 +256,14 @@ export default async function DevelopersPage() {
         <section className="relative px-6 py-24 z-10">
           <div className="dev-glass max-w-5xl mx-auto overflow-hidden rounded-[34px] px-6 py-16 text-center sm:px-12 sm:py-20 relative">
             {/* Ambient background blur */}
-            <div className="pointer-events-none absolute left-1/2 top-0 size-[560px] -translate-x-1/2 -translate-y-1/3 rounded-full bg-talent-bright/20 blur-[120px]" />
+            <div className="pointer-events-none absolute left-1/2 top-0 size-[560px] -translate-x-1/2 -translate-y-1/3 rounded-full bg-talent-bright/10 blur-[120px]" />
             
             <div className="relative">
-              <span className="cue text-indigo-300/80">Take the first step</span>
-              <h2 className="h-section mx-auto max-w-3xl text-balance mt-3 text-white">
+              <span className="cue text-talent">Take the first step</span>
+              <h2 className="h-section mx-auto max-w-3xl text-balance mt-3">
                 Ready to build resilient digital infrastructure?
               </h2>
-              <p className="mx-auto mt-5 max-w-2xl text-slate-400 leading-relaxed">
+              <p className="mx-auto mt-5 max-w-2xl text-muted-foreground leading-relaxed">
                 Apply today, pass our logistics coding sandbox, and start earning by solving high-impact supply chain challenges.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row gap-3 items-center justify-center">

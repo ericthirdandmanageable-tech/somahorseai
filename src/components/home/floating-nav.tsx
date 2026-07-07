@@ -12,7 +12,7 @@ import type { MarketingUser } from "@/lib/auth/marketing";
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 const NAV = [
-  { href: "/#platform", label: "Platform" },
+  { href: "/", label: "Platform" },
   { href: "/agriculture", label: "Agriculture" },
   { href: "/developers", label: "For Developers" },
   { href: "/pricing", label: "Pricing" },

@@ -49,22 +49,22 @@ export function DeveloperFAQ() {
           >
             <button
               onClick={() => toggle(index)}
-              className="flex w-full items-center justify-between px-6 py-5 text-left font-ui text-base font-bold text-white"
+              className="flex w-full items-center justify-between px-6 py-5 text-left font-ui text-base font-bold text-navy"
               aria-expanded={isOpen}
             >
               <span>{faq.question}</span>
               <ChevronDown
-                className={`size-5 text-indigo-300/60 transition-transform duration-300 ${
-                  isOpen ? "rotate-180 text-violet-400" : ""
+                className={`size-5 text-talent/60 transition-transform duration-300 ${
+                  isOpen ? "rotate-180 text-talent" : ""
                 }`}
               />
             </button>
             <div
               className={`transition-all duration-300 ease-in-out ${
-                isOpen ? "max-h-[300px] border-t border-white/8" : "max-h-0"
+                isOpen ? "max-h-[300px] border-t border-border" : "max-h-0"
               } overflow-hidden`}
             >
-              <p className="px-6 py-5 text-sm leading-relaxed text-slate-400">
+              <p className="px-6 py-5 text-sm leading-relaxed text-muted-foreground">
                 {faq.answer}
               </p>
             </div>

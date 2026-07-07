@@ -369,15 +369,15 @@ export function SignupForm({ initialRole }: { initialRole?: string }) {
           {isDevContext ? (
             <>
               <div className="dev-dark-grid absolute inset-0 opacity-60" />
-              <div className="pointer-events-none absolute -top-24 right-[-10%] size-[420px] rounded-full bg-talent-bright/25 blur-[130px]" />
+              <div className="pointer-events-none absolute -top-24 right-[-10%] size-[420px] rounded-full bg-talent-bright/10 blur-[130px]" />
               <div className="relative z-10 flex w-full flex-col justify-between p-12">
-                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-indigo-200/80 font-ui">
+                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-talent font-ui">
                   <Cpu className="size-4" />
                   Developer Network
                 </div>
                 <div className="flex flex-1 items-end justify-center">
                   <Image
-                    src="/developer-robot.png"
+                    src="/developer-real-robot.png"
                     alt=""
                     width={480}
                     height={540}
@@ -386,10 +386,10 @@ export function SignupForm({ initialRole }: { initialRole?: string }) {
                   />
                 </div>
                 <blockquote className="mt-8">
-                  <p className="max-w-md font-display text-2xl font-bold leading-snug text-white">
+                  <p className="max-w-md font-display text-2xl font-bold leading-snug text-navy">
                     Build the future of African agriculture — funded projects, AI safety nets, milestone payouts.
                   </p>
-                  <footer className="mt-4 flex items-center gap-2 text-sm font-semibold text-indigo-200/80">
+                  <footer className="mt-4 flex items-center gap-2 text-sm font-semibold text-talent">
                     <ShieldCheck className="size-4" />
                     Certified engineers only
                   </footer>
